@@ -41,7 +41,7 @@ router.post('/', auth.required, (req, res, next) => {
 
 router.get('/', auth.required, (req, res, next) => {
     const { payload: { id } } = req;
-    console.log(req.body);
+    console.log(id);
     Machines.find({ownerid: id})
     .then((result) => {
         return res.status(201).json(result);
