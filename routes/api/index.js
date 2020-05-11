@@ -3,5 +3,5 @@ const router = express.Router();
 
 router.use('/users', require('./users'));
 router.use("/machines", require('./machines'));
-router.use("/machineReports", require("./machineReport"));
+router.use("/employs", require('./employs'));
 module.exports = router;
