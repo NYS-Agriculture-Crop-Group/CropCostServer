@@ -5,10 +5,11 @@ const jwt = require('jsonwebtoken');
 const { Schema } = mongoose;
 
 const MachineSchema = new Schema({
-    ownerid: {
-        type: String,
-        required: true
-    },
+    // ownerid: {
+    //     type: String,
+    //     required: true
+    // },
+    ownerid: {type: mongoose.Schema.Types.ObjectId, ref: 'users'},
     name: {
         type: String,
         required: true
@@ -89,8 +90,23 @@ const MachineSchema = new Schema({
             text: String,
             default: []
         }
-    ]
-
+    ],
+    repairCosts:{
+        type: Number,
+        default: 0
+    },
+    maintencanceCosts:{
+        type: Number,
+        default: 0
+    },
+    sum:{
+        type: Number,
+        default: 0 
+    },
+    owneremail:{
+        type: String,
+        default: '' 
+    }
 });
 
 
